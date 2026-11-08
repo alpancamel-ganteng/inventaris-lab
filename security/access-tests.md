@@ -3,6 +3,16 @@
 ## Project
 Inventaris Lab - Secure Inventory Management System
 
+## Access Control Matrix
+
+| Hak Akses | Admin | Staff | Viewer |
+|---|---|---|---|
+| Melihat inventaris | Allow | Allow | Allow |
+| Menambah inventaris | Allow | Allow | Deny |
+| Mengubah inventaris | Allow | Allow | Deny |
+| Menghapus inventaris | Allow | Deny | Deny |
+| Mengelola pengguna | Allow | Deny | Deny |
+
 ## Test Results
 
 | No | Test Scenario | Expected Result | Actual Result | Status |
@@ -27,3 +37,16 @@ Each role has different permissions:
 - Viewer can only view inventory.
 
 Unauthorized actions are rejected by the application.
+
+## Risk Mapping
+
+| Security Control | Risk ID |
+|---|---|
+| Password hashing dan autentikasi | R-01 |
+| Role-Based Access Control (RBAC) | R-02 |
+| Session cookie security | R-03 |
+| Database dan backup permissions | R-04 |
+| Container hardening | R-05 |
+| SQL injection prevention | R-06 |
+| Rate limiting | R-07 |
+| Secret key protection | R-08 |
