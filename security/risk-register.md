@@ -7,7 +7,15 @@ Skala: kemungkinan (K) 1–5, dampak (D) 1–5, skor = K × D. Skor digunakan un
 | R-01 | Akses tidak sah akibat password lemah/tebakan (T-01) | 4 | 5 | 20 | Aplikasi internal dapat diakses banyak pengguna; akun demo dan password yang mudah ditebak berisiko bila tidak diganti | 1 |
 | R-02 | Viewer melakukan perubahan langsung ke API (T-03) | 3 | 5 | 15 | API dapat dipanggil tanpa antarmuka browser; kontrol UI saja tidak cukup | 2 |
 | R-03 | Kebocoran session cookie (T-02) | 3 | 5 | 15 | Cookie membawa identitas sesi; pencurian cookie dapat memberi akses sesuai role korban | 3 |
-| R-04 | File SQLite disalin dari host/backup (T-08) | 3 | 4 | 12 | Database berada pada volume persisten; contoh belum mengenkripsi file database | 4 |
+| R-04 | File SQLite disalin dari host/backup (T-08) | 3 | 4 | 12 | Database berada pada volume persisten; contoh belum mengenkripsi file database | 4 | 
+**Status Implementasi: Berhasil**
+
+- Hak akses file database: 600.
+- Hak akses folder database: 700.
+- Pemilik database dan folder: UID/GID 10001.
+- Pengujian akses baca dan tulis database oleh aplikasi: Berhasil.
+
+Pembatasan hak akses dilakukan untuk mencegah pengguna lain mengakses file database tanpa izin.
 | R-05 | Container dieksploitasi dan memperoleh privilege tinggi (T-10) | 2 | 5 | 10 | Aplikasi memproses input jaringan; konfigurasi container yang longgar memperbesar dampak kompromi | 5 |
 | R-06 | SQL injection (T-05) | 2 | 5 | 10 | Endpoint menerima input; query parameterized sudah mengurangi kemungkinan |
 | R-07 | DoS melalui request berulang (T-09) | 3 | 3 | 9 | Worker aplikasi terbatas, tetapi belum ada rate limit |

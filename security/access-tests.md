@@ -50,3 +50,16 @@ Unauthorized actions are rejected by the application.
 | SQL injection prevention | R-06 |
 | Rate limiting | R-07 |
 | Secret key protection | R-08 |
+
+## R-04 – Database and Backup Permissions
+
+Database permissions are restricted using the application user (UID/GID 10001).
+
+Verification results:
+- Database owner: 10001:10001
+- Database permission: 600
+- Data directory owner: 10001:10001
+- Data directory permission: 700
+- Application database read/write test: PASSED
+
+The application successfully accessed the database after permission hardening.
