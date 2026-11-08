@@ -1,0 +1,10 @@
+__pycache__
+.pytest_cache
+.venv
+.git
+.env
+data
+*.db
+*.sqlite
+tests
+security/image-scan-*.txt

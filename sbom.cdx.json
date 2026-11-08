@@ -1,0 +1,17 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "metadata": {
+    "component": {
+      "type": "application",
+      "name": "inventaris-lab",
+      "version": "sec-0.2",
+      "description": "Aplikasi inventaris lab; generate SBOM final dari image dengan Syft."
+    }
+  },
+  "components": [],
+  "notes": [
+    "Kerangka SBOM. Ganti dengan hasil Syft dari image akhir: syft inventaris-lab:sec-0.2 -o cyclonedx-json=sbom.cdx.json"
+  ]
+}

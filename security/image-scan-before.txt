@@ -1,0 +1,2 @@
+STATUS: BELUM DIJALANKAN
+Jalankan perintah baseline pada security/image-scanning.md dan simpan output Trivy aktual di file ini.

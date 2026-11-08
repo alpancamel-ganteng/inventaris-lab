@@ -1,0 +1,2 @@
+STATUS: BELUM DIJALANKAN
+Jalankan perintah scan image akhir pada security/image-scanning.md dan simpan output Trivy aktual di file ini.
