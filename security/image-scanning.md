@@ -33,3 +33,24 @@ SBOM harus dibuat dari image akhir yang benar-benar dibangun, bukan hanya daftar
 ## 4. Catatan hasil
 
 Isi tanggal, versi Docker/Trivy/Syft, nama image, jumlah temuan per severity, dan tindakan perbaikan. Simpan output mentah di repository.
+
+### Hasil Pemindaian Aktual
+Tanggal: 8 November 2026
+
+| Keterangan | Baseline | Final |
+|---|---:|---:|
+| Image | inventaris-lab:before | inventaris-lab:sec-0.2 |
+| Total | 1433 | 9 |
+| CRITICAL | 31 | 0 |
+| HIGH | 438 | 0 |
+| MEDIUM | 964 | 9 |
+
+### Tindakan Perbaikan
+- Memperbarui paket pada image Docker.
+- Melakukan build ulang image final.
+- Melakukan pemindaian ulang menggunakan Trivy.
+- Membuat SBOM format CycloneDX menggunakan Syft.
+
+### Hasil
+Image final tidak memiliki temuan CRITICAL maupun HIGH.
+SBOM final dibuat dari image inventaris-lab:sec-0.2.
