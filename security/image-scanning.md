@@ -33,6 +33,10 @@ SBOM harus dibuat dari image akhir yang benar-benar dibangun, bukan hanya daftar
 ## 4. Catatan hasil
 
 Isi tanggal, versi Docker/Trivy/Syft, nama image, jumlah temuan per severity, dan tindakan perbaikan. Simpan output mentah di repository.
+### Versi Perangkat
+- Docker: 29.7.2
+- Trivy: 0.76.2
+- Syft: 1.57.0
 
 ### Hasil Pemindaian Aktual
 Tanggal: 8 November 2026
