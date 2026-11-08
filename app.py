@@ -13,7 +13,7 @@ ROLES = ("admin", "staff", "viewer")
 def create_app(test_config=None):
     app = Flask(__name__)
     app.config.update(
-        SECRET_KEY=os.environ.get("SECRET_KEY", "dev-only-change-this-secret"),
+        SECRET_KEY=os.environ.get("SECRET_KEY"),
         DATABASE=os.environ.get("DATABASE_PATH", "./data/inventory.db"),
         SESSION_COOKIE_HTTPONLY=True,
         SESSION_COOKIE_SAMESITE="Strict",
@@ -24,6 +24,9 @@ def create_app(test_config=None):
     )
     if test_config:
         app.config.update(test_config)
+
+    if not app.config["SECRET_KEY"]:
+        raise RuntimeError("SECRET_KEY environment variable is required")
 
     Path(app.config["DATABASE"]).parent.mkdir(parents=True, exist_ok=True)
 
