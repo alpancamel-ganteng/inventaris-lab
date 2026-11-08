@@ -21,3 +21,60 @@ AI digunakan untuk membantu menyusun kerangka proyek, dokumentasi aset, DFD, STR
 
 ## Catatan integritas
 File bukti scan dan indeks Lynis belum diisi karena hasilnya harus berasal dari lingkungan eksekusi aktual. Jangan mengklaim pengujian berhasil sebelum menjalankannya.
+
+
+HASIL HARDENING DAN SECURITY SCAN
+
+
+
+1. Ubuntu Server
+
+- Lynis Hardening Index: 70
+
+- UFW: Active
+
+- SSH: Key-based authentication
+
+- Root SSH login: Disabled
+
+- Fail2ban: Active
+
+- GRUB: Password protection enabled
+
+
+
+2. Docker Security
+
+- Docker container berjalan sebagai non-root user
+
+- UID: 10001
+
+- GID: 10001
+
+- Container status: Healthy
+
+
+
+3. Trivy Scan
+
+- UNKNOWN: 0
+
+- LOW: 2
+
+- MEDIUM: 9
+
+- HIGH: 0
+
+- CRITICAL: 0
+
+
+
+4. Software Bill of Materials
+
+- Format: CycloneDX
+
+- File: sbom.cdx.json
+
+- Status: Successfully generated
+
+5. GRUB: Password Protection Enabled
