@@ -39,22 +39,31 @@ Isi tanggal, versi Docker/Trivy/Syft, nama image, jumlah temuan per severity, da
 - Syft: 1.57.0
 
 ### Hasil Pemindaian Aktual
+
 Tanggal: 8 November 2026
 
+Base image final: Debian 13.7 (Trixie)
+
 | Keterangan | Baseline | Final |
-|---|---:|---:|
-| Image | inventaris-lab:before | inventaris-lab:sec-0.2 |
-| Total | 1433 | 9 |
-| CRITICAL | 31 | 0 |
-| HIGH | 438 | 0 |
-| MEDIUM | 964 | 9 |
+|------------|---------:|------:|
+| Image      | inventaris-lab:before | inventaris-lab:sec-0.2 |
+| Total      | 1433 | 130 |
+| CRITICAL   | 31 | 0 |
+| HIGH        | 438 | 47 |
+| MEDIUM      | 964 | 83 |
+
+Catatan: Jumlah final merupakan gabungan hasil pemindaian paket OS Debian dan paket Python.
 
 ### Tindakan Perbaikan
-- Memperbarui paket pada image Docker.
+
+- Memperbarui base image dari Debian Bookworm ke Debian Trixie 13.7.
+- Memperbarui paket OS menggunakan apt-get update dan apt-get upgrade.
 - Melakukan build ulang image final.
 - Melakukan pemindaian ulang menggunakan Trivy.
 - Membuat SBOM format CycloneDX menggunakan Syft.
 
 ### Hasil
-Image final tidak memiliki temuan CRITICAL maupun HIGH.
+Image final tidak memiliki temuan CRITICAL.
+Masih terdapat 47 temuan HIGH dan 83 MEDIUM.
+Temuan HIGH dicatat sebagai risiko residual.
 SBOM final dibuat dari image inventaris-lab:sec-0.2.
