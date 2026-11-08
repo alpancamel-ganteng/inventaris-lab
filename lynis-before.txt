@@ -1,0 +1,13 @@
+LYNIS AUDIT BEFORE HARDENING
+
+
+
+Hardening Index: 65
+
+
+
+Catatan: Output asli audit sebelum hardening lupa disimpan mas wkwkwkwk.
+
+65 dari catatan hasil pengerjaan sebelumnya,
+
+bukan salinan laporan audit Lynis asli.
